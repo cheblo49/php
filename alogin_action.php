@@ -11,7 +11,6 @@
         //아이디가 있는지 검사
         $query = "select * from member where id='$id'";
         $result = $connect->query($query);
- 
 
 	?> 
 
@@ -23,13 +22,14 @@
                 $row=mysqli_fetch_assoc($result);
  
                 //비밀번호가 맞다면 세션 생성
-                if($row['pw']==$pw){
+                if($row['pw']==$pw and $row['permit'] == "1"){
+		
                         $_SESSION['userid']=$id;
 			$_SESSION['userpw']=$pw;
                         if(isset($_SESSION['userid'])){
                         ?>      <script>
                                         alert("로그인 되었습니다.");
-                                        location.replace("./list.php");
+                                        location.replace("./alist.php");
                                 </script>
 <?php
                         }

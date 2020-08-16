@@ -1,18 +1,23 @@
  <?php
                 $connect = mysqli_connect("localhost", "admin", "adminM1234@", "db") or die("fail");
  
-		$number = $_GET[number];
-                $id = $_GET[name];                      //Writer
-                $pw = $_GET[pw];                        //Password
-                $title = $_GET[title];                  //Title
-                $content = $_GET[content];                //Content
+		$number = $_POST[number];
+                $id = $_POST[name];                      //Writer
+                $pw = $_POST[pw];                        //Password
+                $title = $_POST[title];                  //Title
+                $content = $_POST[content];                //Content
                 $date = date('Y-m-d H:i:s');            //Date
  
                 $URL = './index.php';                   //return URL
  
- 
-                $query = "insert into board (number, title, content, date, hit, id, password) 
-                        values(null,'$title', '$content', '$date',0, '$id', '$pw')";
+		$tmpfile =  $_FILES['b_file']['tmp_name'];
+		$o_name = $_FILES['b_file']['name'];
+		$filename = iconv("UTF-8", "EUC-KR",$_FILES['b_file']['name']);
+		$folder = "../var/www/html/upload/".$filename;
+		move_uploaded_file($o_name,$folder);
+
+                $query = "insert into board (number, title, content, date, hit, id, password, recommend, file) 
+                        values(null,'$title', '$content', '$date',0, '$id', '$pw',0, '$o_name')";
  		
 		if(empty($title)){
 ?>			<script>

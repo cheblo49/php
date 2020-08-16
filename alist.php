@@ -42,15 +42,13 @@
 		session_start();
  
                 if(isset($_SESSION['userid'])) {
-                        echo $_SESSION['userid'];?>님 안녕하세요
-			<button onclick="location.href='./logout.php'">로그아웃</button>
-			<button onclick="location.href='./mypage.php'">마이페이지</button>
+                       ?>관리자님 안녕하세요
+			<button onclick="location.href='./logout.php'">관리자 로그아웃</button>
                         <br/>
         <?php
                 }
                 else {
-        ?>              <button onclick="location.href='./login.php'">로그인</button>
-                        <br />
+        ?>            
         <?php   }
         ?>
 
@@ -82,7 +80,7 @@
                         <?php } ?>
                 <td width = "50" align = "center"><?php echo $total?></td>
                 <td width = "500" align = "center">
-                <a href = "view.php?number=<?php echo $rows['number']?>">
+                <a href = "aview.php?number=<?php echo $rows['number']?>">
                 <?php echo $rows['title']?></td>
                   <td width = "100" align = "center"><?php echo $rows['id']?></td>
                 <td width = "200" align = "center"><?php echo $rows['date']?></td>
@@ -96,10 +94,7 @@
         </tbody>
         </table>
  
-        <div class = text>
-        <font style="cursor: hand"onClick="location.href='./write.php'">글쓰기</font>
-        </div>
- 
+
  
  
  

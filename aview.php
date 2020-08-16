@@ -123,9 +123,8 @@ width: 500px;
  
         <!-- MODIFY & DELETE -->
         <div class="view_btn">
-		 <button class="view_btn1" onclick="location.href='recommend.php?number=<?=$number?>'">추천</button>
-                <button class="view_btn1" onclick="location.href='list.php'">목록으로</button>
-                <button class="view_btn1" onclick="location.href='./modify.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>'">수정</button>
-                <button class="view_btn1" onclick="location.href='./delete_action.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>'">삭제</button>
+                <button class="view_btn1" onclick="location.href='alist.php'">목록으로</button>
+                <button class="view_btn1" onclick="location.href='./amodify.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>'">수정</button>
+                <button class="view_btn1" onclick="location.href='./adelete_action.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>'">삭제</button>
         </div>
  

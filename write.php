@@ -43,8 +43,8 @@
                 }
         ?>
 
-         <form method = "get" action = "write_action.php">
-        <table  style="padding-top:50px" align = center width=700 border=0 cellpadding=2 >
+        <form method="post" enctype="multipart/form-data" action = "write_action.php">
+        <table style="padding-top:50px" align = center width=700 border=0 cellpadding=2 >
                 <tr>
                 <td height=20 align= center bgcolor=#ccc><font color=white> 글쓰기</font></td>
                 </tr>
@@ -65,7 +65,13 @@
                         <td>내용</td>
                         <td><textarea name = content cols=85 rows=15></textarea></td>
                         </tr>
- 
+ 			
+		
+			<tr>
+			<td>FIle</td>
+    		        <td><input type="file" value="1" name="b_file" /></td>
+			</tr>
+
                         </table>
                           <center>
                         <input type = "submit" value="작성">

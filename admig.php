@@ -49,7 +49,7 @@
         <?php
                 }
                 else {
-        ?>              <button onclick="location.href='./login.php'">로그인</button>
+        ?>              <button onclick="location.href='./alogin.php'">관리자 로그인</button>
                         <br />
         <?php   }
         ?>
@@ -96,9 +96,7 @@
         </tbody>
         </table>
  
-        <div class = text>
-        <font style="cursor: hand"onClick="location.href='./write.php'">글쓰기</font>
-        </div>
+  
  
  
  

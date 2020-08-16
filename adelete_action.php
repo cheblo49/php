@@ -20,16 +20,13 @@
 
 	session_start();
 
-         $URL = "./list.php";
+         $URL = "./alist.php";
 
-                if($_SESSION['userid']!=$usrid) {
-        ?>              <script>
-                                alert("권한이 없습니다. 게시판으로 이동합니다.");
-                                location.replace("<?php echo $URL?>");
-                        </script>
-        <?php   }
+               
+        ?>            
+        <?php  
 
-                else{
+        
 
 
  			$query = "delete from board where number=$number";
@@ -47,13 +44,13 @@
 			?>
 			        <script>
 			            alert("삭제되었습니다.");
-			            location.replace("./list.php");
+			            location.replace("./alist.php");
 			        </script>
 			<?php    }
 		        else {
 			        echo "fail";
 			}
-		}
+		
 ?>	
 
 
